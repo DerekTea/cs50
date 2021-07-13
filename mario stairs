@@ -1,0 +1,39 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{ 
+    // prompt user for an integer between 0 and 8
+    int h;
+    do 
+    {
+        h = get_int("Height: ");
+    }
+    while (h > 8 || h <= 0);
+    
+    // loop to make left stairs and space
+    for (int a = 1; a <= h; a++)
+    {
+        for (int b = h; b > a; b--)
+        {
+            printf(" ");
+        }
+        
+        for (int c = 0; c < a; c++)
+        {
+            printf("#");
+        }
+        
+        for (int d = 0; d < 2; d++)
+        {
+            printf(" ");
+        }
+        
+        // loop to make right stairs
+        for (int n = 0; n < a; n++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
